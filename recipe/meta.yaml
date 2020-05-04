@@ -1,4 +1,4 @@
-{% set version = '0.4-10' %}
+{% set version = "0.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mda_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mda/mda_{{ version }}.tar.gz
-  sha256: 7036bc622a8fea5b2de94fc19e6b64f5f0c27e5d743ae7646e116af08c9de6a5
+  sha256: bdee7286200d37e04205a02ccf37cb0b692e066ba903df2c3a3d87ddd3cff206
 
 build:
-  merge_build_host: True  # [win]
-  number: 1002
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -25,17 +25,17 @@ requirements:
     - {{ compiler('fortran') }}  # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ compiler('m2w64_fortran') }}        # [win]
-    - {{posix}}filesystem        # [win]
-    - {{posix}}make
-    - {{posix}}sed               # [win]
-    - {{posix}}coreutils         # [win]
-    - {{posix}}zip               # [win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}make
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
   host:
     - r-base
     - r-class
   run:
     - r-base
-    - {{native}}gcc-libs         # [win]
+    - {{ native }}gcc-libs         # [win]
     - r-class
 
 test:
@@ -46,10 +46,9 @@ test:
 about:
   home: https://CRAN.R-project.org/package=mda
   license: GPL-2
-  summary: Mixture and flexible discriminant analysis, multivariate adaptive regression splines
-    (MARS), BRUTO, ...
+  summary: Mixture and flexible discriminant analysis, multivariate adaptive regression splines (MARS), BRUTO, ...
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
