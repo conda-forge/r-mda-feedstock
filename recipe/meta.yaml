@@ -14,7 +14,7 @@ source:
 
 build:
   merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -45,7 +45,7 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=mda
-  license: GPL-2
+  license: GPL-2.0-only
   summary: Mixture and flexible discriminant analysis, multivariate adaptive regression splines (MARS), BRUTO, ...
   license_family: GPL2
   license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
