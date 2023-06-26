@@ -1,4 +1,4 @@
-{% set version = "0.5-3" %}
+{% set version = "0.5-4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mda_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mda/mda_{{ version }}.tar.gz
-  sha256: bda6409c17f385fae97da458cc742334e7b47aab8217a975b7551e2e18d38463
+  sha256: f25f7f28807d0fa478b1b55eb9d026ebc30577d9d5ff288f9abfe1f3fdb8a759
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
