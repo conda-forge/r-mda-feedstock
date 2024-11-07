@@ -1,4 +1,4 @@
-{% set version = "0.5-4" %}
+{% set version = "0.5-5" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mda_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mda/mda_{{ version }}.tar.gz
-  sha256: f25f7f28807d0fa478b1b55eb9d026ebc30577d9d5ff288f9abfe1f3fdb8a759
+  sha256: 3351047bc55e678ba3cfb4590d1c253885c8cbcd4e3411582b9bde0a8a4062ce
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
